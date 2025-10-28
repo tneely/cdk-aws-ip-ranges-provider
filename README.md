@@ -1,9 +1,10 @@
 # Welcome to your CDK TypeScript Construct Library project
 
-You should explore the contents of this project. It demonstrates a CDK Construct Library that includes a construct (`CdkAwsIpRangesProviderPlugin`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
+An AWS IP ranges CDK context provider plugin.
 
-The construct defines an interface (`CdkAwsIpRangesProviderPluginProps`) to configure the visibility timeout of the queue.
+AWS provides a list of service IP ranges in JSON form at https://ip-ranges.amazonaws.com/ip-ranges.json.
+The information in this file is generated from AWS's internal system-of-record and is authoritative.
+You can expect it to change several times per week and should refresh your `cdk.context.json` file as neede. 
 
 ## Installation
 
@@ -50,7 +51,6 @@ for (const cidr of ipRanges.ipv4Ranges) {
 
 # TODO
 
-[ ] - Add prettier
-[ ] - Publish to npm
-[ ] - Clean up documentation
-[ ] - ???
+- [ ] Add prettier
+- [ ] Publish to npm
+- [ ] ???

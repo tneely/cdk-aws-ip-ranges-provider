@@ -15,6 +15,9 @@ export interface AwsIpRangesProps {
   region?: string,
 }
 
+/**
+ * Provides a list of IP ranges for the given AWS service.
+ */
 export class AwsIpRanges {
   /**
    * IPv4 CIDR blocks
