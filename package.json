@@ -1,8 +1,8 @@
 {
   "name": "cdk-aws-ip-ranges-provider",
   "version": "0.1.0",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "build": "tsc && cp package.json README.md LICENSE dist/",
     "test": "jest"
@@ -16,7 +16,7 @@
     "constructs": "^10.0.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5",
-    "typescript": "~5.6.3"
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "@aws-cdk/cli-plugin-contract": "^2.181.1",
