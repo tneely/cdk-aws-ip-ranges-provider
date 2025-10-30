@@ -1,5 +1,11 @@
 {
   "name": "cdk-aws-ip-ranges-provider",
+  "description": "An AWS IP ranges CDK context provider plugin ",
+  "author": {"email": "tneely417@gmail.com", "name": "Taylor Neely"},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tneely/cdk-aws-ip-ranges-provider.git"
+  },
   "version": "0.1.0",
   "main": "index.js",
   "types": "index.d.ts",
