@@ -1,7 +1,7 @@
-import { ContextProviderPlugin } from '@aws-cdk/toolkit-lib';
-import * as https from 'https';
+import { ContextProviderPlugin } from "@aws-cdk/toolkit-lib";
+import * as https from "https";
 
-const IP_RANGES_URL = 'https://ip-ranges.amazonaws.com/ip-ranges.json';
+const IP_RANGES_URL = "https://ip-ranges.amazonaws.com/ip-ranges.json";
 export const IP_RANGES_PLUGIN = "aws-ip-ranges";
 
 /**
@@ -49,7 +49,7 @@ interface AwsIpRangesData {
 /**
  * Context provider plugin for AWS IP ranges
  */
-export class IpRangesContextProviderPlugin implements ContextProviderPlugin{
+export class IpRangesContextProviderPlugin implements ContextProviderPlugin {
   public async getValue(args: IpRangesContextQuery): Promise<IpRangesContextResponse> {
     const data = await this.fetchIpRanges();
     const region = args.region;
@@ -83,13 +83,13 @@ export class IpRangesContextProviderPlugin implements ContextProviderPlugin{
             return;
           }
 
-          let data = '';
+          let data = "";
 
-          res.on('data', (chunk) => {
+          res.on("data", (chunk) => {
             data += chunk;
           });
 
-          res.on('end', () => {
+          res.on("end", () => {
             try {
               const parsed = JSON.parse(data) as AwsIpRangesData;
               resolve(parsed);
@@ -98,7 +98,7 @@ export class IpRangesContextProviderPlugin implements ContextProviderPlugin{
             }
           });
         })
-        .on('error', (err) => {
+        .on("error", (err) => {
           reject(new Error(`Failed to fetch IP ranges: ${err.message}`));
         });
     });

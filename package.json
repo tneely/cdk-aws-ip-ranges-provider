@@ -5,7 +5,10 @@
   "types": "index.d.ts",
   "scripts": {
     "build": "tsc && cp package.json README.md LICENSE dist/",
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "npm run lint && prettier --check .",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "npm run lint -- --fix && prettier --write ."
   },
   "devDependencies": {
     "@aws-cdk/cli-plugin-contract": "^2.181.1",
@@ -14,9 +17,13 @@
     "@types/node": "22.7.9",
     "aws-cdk-lib": "2.215.0",
     "constructs": "^10.0.0",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
     "jest": "^29.7.0",
+    "prettier": "^3.6.2",
     "ts-jest": "^29.2.5",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.2"
   },
   "peerDependencies": {
     "@aws-cdk/cli-plugin-contract": "^2.181.1",
